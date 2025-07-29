@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canva + Python + AI: The Ultimate Learning Roadmap</title>
+  <meta name="description" content="Master the trifecta of Canva design, Python development, and AI integration to build profitable digital skills and income streams">
+  <meta name="keywords" content="Canva design, Python programming, AI learning, monetization strategies, digital skills, freelancing">
+  <style>
+    :root {
+      --python-blue: #3776AB;
+      --python-yellow: #FFD43B;
+      --ai-purple: #6E3BEC;
+      --canva-orange: #FF6B6B;
+      --ux-teal: #00C4CC;
+      --dark-bg: #121212;
+      --card-bg: #1E1E1E;
+      --text-light: #F0F0F0;
+      --success: #48BB78;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--dark-bg);
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .header-gradient {
+      background: linear-gradient(135deg, var(--python-blue) 0%, var(--ai-purple) 50%, var(--canva-orange) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .skill-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .skill-badge {
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .python-badge { background-color: rgba(55, 118, 171, 0.2); border: 1px solid var(--python-blue); color: var(--python-blue); }
+    .ai-badge { background-color: rgba(110, 59, 236, 0.2); border: 1px solid var(--ai-purple); color: var(--ai-purple); }
+    .canva-badge { background-color: rgba(255, 107, 107, 0.2); border: 1px solid var(--canva-orange); color: var(--canva-orange); }
+    .ux-badge { background-color: rgba(0, 196, 204, 0.2); border: 1px solid var(--ux-teal); color: var(--ux-teal); }
+
+    .roadmap {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .phase {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border-left: 4px solid;
+      transition: transform 0.3s ease;
+    }
+
+    .phase:hover {
+      transform: translateY(-5px);
+    }
+
+    .phase-1 { border-color: var(--python-blue); }
+    .phase-2 { border-color: var(--ai-purple); }
+    .phase-3 { border-color: var(--canva-orange); }
+    .phase-4 { border-color: var(--ux-teal); }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .phase-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--python-blue) 0%, var(--ai-purple) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .phase-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .phase-subtitle {
+      color: #AAA;
+      font-size: 0.95rem;
+    }
+
+    .content-container {
+      display: none;
+    }
+
+    .active .content-container {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .pillar-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .pillar {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pillar-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .pillar-title i {
+      margin-right: 0.5rem;
+    }
+
+    .resource-item {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .resource-item::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--python-yellow);
+    }
+
+    .resource-link {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: block;
+      margin: 0.3rem 0;
+    }
+
+    .resource-link:hover {
+      color: var(--python-yellow);
+      text-decoration: underline;
+    }
+
+    .monetization-tip {
+      background: rgba(72, 187, 120, 0.1);
+      border-left: 3px solid var(--success);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .monetization-title {
+      font-weight: 600;
+      color: var(--success);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .monetization-title i {
+      margin-right: 0.5rem;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.2rem;
+      background: var(--python-blue);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .action-btn i {
+      margin-right: 0.5rem;
+    }
+
+    .action-btn:hover {
+      background: var(--ai-purple);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .canva-btn { background: var(--canva-orange); }
+    .canva-btn:hover { background: #ff5252; }
+
+    .ai-btn { background: var(--ai-purple); }
+    .ai-btn:hover { background: #5d2bd6; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: #AAA;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1.5rem;
+      }
+      
+      .header-gradient {
+        font-size: 2rem;
+      }
+      
+      .pillar-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="header-gradient">Canva + Python + AI Roadmap</h1>
+      <p>The complete learning path to design, code, and monetize your skills</p>
+      
+      <div class="skill-badges">
+        <div class="skill-badge python-badge"><i class="fab fa-python"></i> Python Development</div>
+        <div class="skill-badge ai-badge"><i class="fas fa-robot"></i> AI Integration</div>
+        <div class="skill-badge canva-badge"><i class="fab fa-canva"></i> Canva Design</div>
+        <div class="skill-badge ux-badge"><i class="fas fa-paint-brush"></i> UI/UX Principles</div>
+      </div>
+    </header>
+
+    <div class="roadmap">
+      <!-- Phase 1 -->
+      <div class="phase phase-1 active" id="phase1">
+        <div class="phase-header" onclick="togglePhase('phase1')">
+          <div class="phase-number">1</div>
+          <div>
+            <h2 class="phase-title">Foundations</h2>
+            <p class="phase-subtitle">Master the basics of Python, Canva, and AI concepts</p>
+          </div>
+        </div>
+        
+        <div class="content-container">
+          <div class="pillar-container">
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fab fa-python"></i> Python Basics</h3>
+              <div class="resource-item">
+                <a href="https://docs.python.org/3/tutorial/" class="resource-link" target="_blank">Official Python Tutorial</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.codecademy.com/learn/learn-python-3" class="resource-link" target="_blank">Codecademy Python Course</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=rfscVS0vtbw" class="resource-link" target="_blank">Python for Beginners (4hr YouTube Tutorial)</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-lightbulb"></i> Monetization Tip</div>
+                <p>Start documenting your learning journey on social media. Create simple "Python Tip of the Day" posts using Canva templates.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fab fa-canva"></i> Canva Fundamentals</h3>
+              <div class="resource-item">
+                <a href="https://designschool.canva.com/" class="resource-link" target="_blank">Canva Design School</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=WQb6N2h-3DY" class="resource-link" target="_blank">Canva Pro Tutorial</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.canva.com/learn/design-social-media-content/" class="resource-link" target="_blank">Social Media Design Guide</a>
+              </div>
+              
+              <a href="https://www.canva.com/templates/" class="action-btn canva-btn" target="_blank"><i class="fab fa-canva"></i> Explore Templates</a>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-robot"></i> AI Essentials</h3>
+              <div class="resource-item">
+                <a href="https://www.deeplearning.ai/" class="resource-link" target="_blank">AI For Everyone (Andrew Ng)</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://openai.com/blog/" class="resource-link" target="_blank">OpenAI Blog</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=JMUxmLyrhSk" class="resource-link" target="_blank">AI Concepts Explained</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-dollar-sign"></i> Early Opportunity</div>
+                <p>Create AI-themed Canva templates (AI news, ChatGPT prompts, etc.) and sell on Creative Market.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase phase-2" id="phase2">
+        <div class="phase-header" onclick="togglePhase('phase2')">
+          <div class="phase-number">2</div>
+          <div>
+            <h2 class="phase-title">Integration</h2>
+            <p class="phase-subtitle">Combine Python with Canva and AI tools</p>
+          </div>
+        </div>
+        
+        <div class="content-container">
+          <div class="pillar-container">
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-code"></i> Python Automation</h3>
+              <div class="resource-item">
+                <a href="https://automatetheboringstuff.com/" class="resource-link" target="_blank">Automate the Boring Stuff</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=OtuZL2jQq8Q" class="resource-link" target="_blank">Canva API Tutorial</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://platform.openai.com/docs/api-reference" class="resource-link" target="_blank">OpenAI API Docs</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-bolt"></i> Automation Business</div>
+                <p>Offer Canva automation services (bulk image generation, template creation) using Python scripts.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-brain"></i> AI-Powered Design</h3>
+              <div class="resource-item">
+                <a href="https://www.canva.com/ai-tools/" class="resource-link" target="_blank">Canva AI Tools</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://openai.com/dall-e-2/" class="resource-link" target="_blank">DALL-E Image Generation</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=YH0Lf6U1G5o" class="resource-link" target="_blank">AI Design Workflow</a>
+              </div>
+              
+              <a href="https://www.canva.com/magic-write/" class="action-btn ai-btn" target="_blank"><i class="fas fa-magic"></i> Try Magic Write</a>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-chart-line"></i> Content Strategy</h3>
+              <div class="resource-item">
+                <a href="https://blog.hootsuite.com/social-media-seo/" class="resource-link" target="_blank">Social Media SEO</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/creators/howthworks/" class="resource-link" target="_blank">YouTube Monetization</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.canva.com/learn/content-creation/" class="resource-link" target="_blank">Canva Content Guide</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-users"></i> Growth Hack</div>
+                <p>Use Python to analyze your content performance and double down on what works.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase phase-3" id="phase3">
+        <div class="phase-header" onclick="togglePhase('phase3')">
+          <div class="phase-number">3</div>
+          <div>
+            <h2 class="phase-title">Monetization</h2>
+            <p class="phase-subtitle">Turn your skills into multiple income streams</p>
+          </div>
+        </div>
+        
+        <div class="content-container">
+          <div class="pillar-container">
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-store"></i> Digital Products</h3>
+              <div class="resource-item">
+                <a href="https://www.etsy.com/sell/digital" class="resource-link" target="_blank">Sell on Etsy</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://creativemarket.com/sell" class="resource-link" target="_blank">Creative Market</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://gumroad.com/" class="resource-link" target="_blank">Gumroad</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-box-open"></i> Product Ideas</div>
+                <p>Create and sell: Canva templates for developers, AI prompt collections, Python cheat sheets.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-laptop-code"></i> Freelance Services</h3>
+              <div class="resource-item">
+                <a href="https://www.upwork.com/" class="resource-link" target="_blank">Upwork</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.fiverr.com/" class="resource-link" target="_blank">Fiverr</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.toptal.com/" class="resource-link" target="_blank">Toptal (Premium)</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-bullseye"></i> Service Niches</div>
+                <p>Offer: Canva automation, AI-powered design systems, Python data visualization.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+              <div class="resource-item">
+                <a href="https://www.udemy.com/teaching/" class="resource-link" target="_blank">Udemy Instructor</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://teachable.com/" class="resource-link" target="_blank">Teachable</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/creators/" class="resource-link" target="_blank">YouTube Creator</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-chalkboard-teacher"></i> Course Ideas</div>
+                <p>"Canva for Developers", "Python Automation for Designers", "AI-Powered Design Workflows"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase phase-4" id="phase4">
+        <div class="phase-header" onclick="togglePhase('phase4')">
+          <div class="phase-number">4</div>
+          <div>
+            <h2 class="phase-title">Advanced Growth</h2>
+            <p class="phase-subtitle">Scale your income and personal brand</p>
+          </div>
+        </div>
+        
+        <div class="content-container">
+          <div class="pillar-container">
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-network-wired"></i> AI Automation</h3>
+              <div class="resource-item">
+                <a href="https://platform.openai.com/docs/guides/autonomous-agents" class="resource-link" target="_blank">AI Agents</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=YVU5FkFZSCI" class="resource-link" target="_blank">AI Content Systems</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://zapier.com/blog/automate-with-ai/" class="resource-link" target="_blank">AI Workflows</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-cogs"></i> Scaling Tip</div>
+                <p>Create AI-powered content generation systems that combine Python, Canva, and GPT for passive income.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-users"></i> Community Building</h3>
+              <div class="resource-item">
+                <a href="https://www.patreon.com/" class="resource-link" target="_blank">Patreon</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://discord.com/developers/docs/intro" class="resource-link" target="_blank">Discord Community</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=8f5WpO3Z4U8" class="resource-link" target="_blank">Community Growth</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-handshake"></i> Premium Offerings</div>
+                <p>Offer exclusive Canva templates, Python scripts, and AI tools to your community members.</p>
+              </div>
+            </div>
+            
+            <div class="pillar">
+              <h3 class="pillar-title"><i class="fas fa-rocket"></i> Scaling Strategies</h3>
+              <div class="resource-item">
+                <a href="https://www.indiehackers.com/" class="resource-link" target="_blank">Indie Hacking</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.youtube.com/watch?v=0CDXJ6bMkMY" class="resource-link" target="_blank">Digital Products at Scale</a>
+              </div>
+              <div class="resource-item">
+                <a href="https://www.shopify.com/blog/digital-products" class="resource-link" target="_blank">E-commerce for Digital</a>
+              </div>
+              
+              <div class="monetization-tip">
+                <div class="monetization-title"><i class="fas fa-chart-pie"></i> Diversification</div>
+                <p>Combine multiple income streams: products, services, ads, affiliates, and community.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin: 3rem 0;">
+      <a href="#phase1" class="action-btn" onclick="startLearning()"><i class="fas fa-play"></i> Start Learning Journey</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Canva + Python + AI Roadmap | Created with ❤️ for digital creators</p>
+    <p style="margin-top: 0.5rem;">Combine design, code, and AI to build your dream career</p>
+  </footer>
+
+  <script>
+    // Phase toggle system
+    function togglePhase(phaseId) {
+      const phase = document.getElementById(phaseId);
+      phase.classList.toggle('active');
+      
+      // Scroll to the phase if opening
+      if (phase.classList.contains('active')) {
+        phase.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Start learning function
+    function startLearning() {
+      // Open first phase if not already open
+      const firstPhase = document.getElementById('phase1');
+      if (!firstPhase.classList.contains('active')) {
+        firstPhase.classList.add('active');
+        firstPhase.scrollIntoView({ behavior: 'smooth' });
+      }
+      
+      // Show motivational message
+      alert("🚀 Let's begin your Canva + Python + AI journey! The first resources are now unlocked.");
+    }
+
+    // Make resource links trackable
+    document.querySelectorAll('.resource-link').forEach(link => {
+      link.addEventListener('click', function() {
+        console.log('Resource accessed:', this.href);
+        // Here you would typically send this to analytics
+      });
+    });
+
+    // Open first phase by default
+    document.getElementById('phase1').classList.add('active');
+  </script>
+</body>
+</html>
