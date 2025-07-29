@@ -17,6 +17,8 @@
       --card-bg: #1E1E1E;
       --text-light: #F0F0F0;
       --success: #48BB78;
+      --github-gray: #333333;
+      --blogger-orange: #FF5722;
     }
 
     * {
@@ -73,6 +75,8 @@
     .ai-badge { background-color: rgba(110, 59, 236, 0.2); border: 1px solid var(--ai-purple); color: var(--ai-purple); }
     .canva-badge { background-color: rgba(255, 107, 107, 0.2); border: 1px solid var(--canva-orange); color: var(--canva-orange); }
     .ux-badge { background-color: rgba(0, 196, 204, 0.2); border: 1px solid var(--ux-teal); color: var(--ux-teal); }
+    .github-badge { background-color: rgba(51, 51, 51, 0.2); border: 1px solid var(--github-gray); color: var(--github-gray); }
+    .blogger-badge { background-color: rgba(255, 87, 34, 0.2); border: 1px solid var(--blogger-orange); color: var(--blogger-orange); }
 
     .roadmap {
       display: grid;
@@ -239,12 +243,64 @@
     .ai-btn { background: var(--ai-purple); }
     .ai-btn:hover { background: #5d2bd6; }
 
+    .github-btn { background: var(--github-gray); }
+    .github-btn:hover { background: #222; }
+
+    .blogger-btn { background: var(--blogger-orange); }
+    .blogger-btn:hover { background: #e64a19; }
+
     footer {
       text-align: center;
       padding: 2rem;
       margin-top: 3rem;
       color: #AAA;
       font-size: 0.9rem;
+    }
+
+    .portfolio-section {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .portfolio-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-card h3 {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .portfolio-card i {
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .portfolio-stats {
+      font-size: 0.9rem;
+      color: #AAA;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-description {
+      margin-bottom: 1rem;
     }
 
     @keyframes fadeIn {
@@ -264,6 +320,10 @@
       .pillar-container {
         grid-template-columns: 1fr;
       }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -279,8 +339,40 @@
         <div class="skill-badge ai-badge"><i class="fas fa-robot"></i> AI Integration</div>
         <div class="skill-badge canva-badge"><i class="fab fa-canva"></i> Canva Design</div>
         <div class="skill-badge ux-badge"><i class="fas fa-paint-brush"></i> UI/UX Principles</div>
+        <div class="skill-badge github-badge"><i class="fab fa-github"></i> GitHub Projects</div>
+        <div class="skill-badge blogger-badge"><i class="fab fa-blogger"></i> Blogger Network</div>
       </div>
     </header>
+
+    <!-- Portfolio Section -->
+    <div class="portfolio-section">
+      <h2>My Digital Portfolio</h2>
+      <p>Leveraging my extensive content network and development projects</p>
+      
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <h3><i class="fab fa-blogger"></i> Blogger Network</h3>
+          <div class="portfolio-stats">500+ Active Blogs | 10M+ Monthly Views</div>
+          <div class="portfolio-description">
+            My network of monetized Blogger sites covering technology, design, and AI topics.
+          </div>
+          <a href="https://www.blogger.com/blog/posts/3329850273058131444" class="action-btn blogger-btn" target="_blank">
+            <i class="fab fa-blogger"></i> View Blog Network
+          </a>
+        </div>
+        
+        <div class="portfolio-card">
+          <h3><i class="fab fa-github"></i> GitHub Projects</h3>
+          <div class="portfolio-stats">2012 Repositories | 500+ Stars</div>
+          <div class="portfolio-description">
+            Open-source projects and templates published via GitHub Pages for developers.
+          </div>
+          <a href="https://github.com/KhanRiyazi" class="action-btn github-btn" target="_blank">
+            <i class="fab fa-github"></i> Explore GitHub
+          </a>
+        </div>
+      </div>
+    </div>
 
     <div class="roadmap">
       <!-- Phase 1 -->
@@ -561,6 +653,10 @@
 
   <footer>
     <p>© 2024 Canva + Python + AI Roadmap | Created with ❤️ for digital creators</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="https://www.blogger.com/blog/posts/3329850273058131444" class="resource-link" target="_blank"><i class="fab fa-blogger"></i> My Blogger Network</a> | 
+      <a href="https://github.com/KhanRiyazi" class="resource-link" target="_blank"><i class="fab fa-github"></i> My GitHub Projects</a>
+    </p>
     <p style="margin-top: 0.5rem;">Combine design, code, and AI to build your dream career</p>
   </footer>
 
